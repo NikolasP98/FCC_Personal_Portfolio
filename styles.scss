@@ -1,0 +1,109 @@
+// ===== IMPORTS =====
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Josefin+Sans:wght@300&family=Montserrat&display=swap');
+
+// ===== VARIABLES =====
+
+$font-title: 'Montserrat', sans-serif;
+$font-detail: 'Josefin Sans', sans-serif;
+$font-text: 'Hind Siliguri', sans-serif;
+
+$header-size: 50px;
+
+$clr-main: #fff;
+$clr-bg: #fff;
+$clr-details: #bebebe;
+
+$clr-text: #000;
+
+// ===== CUSTOM CSS =====
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	// font-size: 62.5%;
+	scroll-behavior: smooth;
+	font-family: $font-text;
+}
+
+h1 {
+	font-family: $font-title;
+	font-size: 2rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-detail;
+}
+
+i + * {
+	margin-left: 0.5rem;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: $header-size;
+	padding: 0 5rem;
+	background-color: rgba(0, 0, 0, 0);
+	a {
+		color: $clr-details;
+		text-decoration: none;
+		&:hover {
+			color: #e96666;
+		}
+	}
+	#navbar {
+		ul {
+			display: flex;
+			list-style: none;
+			li + li {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
+
+#welcome-section {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+// ===== MEDIA QUERIES =====
+
+@media (max-width: 475px) {
+	header {
+		.logo {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+
+			animation: logoAnimate forwards 0.25s ease;
+		}
+		#navbar {
+			display: none;
+		}
+	}
+}
+
+// ===== KEYFRAMES =====
+
+@keyframes logoAnimate {
+	from {
+		font-size: 1rem;
+	}
+	to {
+		font-size: 1.5rem;
+	}
+}
